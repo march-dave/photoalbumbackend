@@ -11,12 +11,12 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var pbalbum = require('./routes/pbalbum');
+var palbum = require('./routes/palbum');
 
 var app = express();
 
 var mongoose = require('mongoose');
-const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost:/pba-app'
+const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost:/pa-app'
 mongoose.connect(MONGOURL, err => {
     console.log(err || `Connected to MongoDB at ${MONGOURL}`);
 });
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/pbalbum', pbalbum);
+app.use('/palbum', palbum);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
