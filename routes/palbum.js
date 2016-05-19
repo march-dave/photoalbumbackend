@@ -30,7 +30,6 @@ router.route('/')
     });
   });
 
-
   router.delete('/:id', (req, res) => {
     Palbum.findByIdAndRemove(req.params.id, (err, palbum) => {
       if(err) {

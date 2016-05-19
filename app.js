@@ -1,6 +1,8 @@
 'use strict';
 
-require('dotenv').load();
+// require('dotenv').load();
+
+const PORT = process.env.PORT || 3000;
 
 var express = require('express');
 var path = require('path');
@@ -11,7 +13,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var palbum = require('./routes/palbum');
+// var palbum = require('./routes/palbum');
 
 var app = express();
 
@@ -33,9 +35,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
 app.use('/users', users);
-app.use('/palbum', palbum);
+// app.use('/palbum', palbum);
+app.use('/api', require('./routes/api'));
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
