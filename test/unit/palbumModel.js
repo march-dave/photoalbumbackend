@@ -41,43 +41,43 @@ describe('Palbum', function() {
     });
   });
 
-    // describe('create()', function() {
-    //   it('should retrieve the Palbum from the model.', function(cb) {
-    //
-    //     var newPalbum = new Palbum({
-    //         imagename: 'Nature 2',
-    //         imageurl: 'http://www.planwallpaper.com/static/images/038a514bc31420cbff45bac3303672a9_large.jpg'
-    //       });
-    //
-    //       Palbum.create(newPalbum, function(err, palbum) {
-    //         expect(palbum).to.exist;
-    //         cb();
-    //        });
-    //   });
-    // });
+    describe('create()', function() {
+      it('should retrieve the Palbum from the model.', function(cb) {
 
-    // describe('.get()', function() {
-    // it('should retrieve the Palbum from the model.', function(cb) {
-    //
-    //    Palbum.find({}, (err, albums) => {
-    //       // expect(albums).to.exist;
-    //       expect(albums).to.have.length(1);
-    //       cb();
-    //      });
-    //
-    //   });
-    // });
-    //
-    // describe('.delete()', function() {
-    // it('should delete the Palbum from the model.', function(cb) {
-    //
-    //    Palbum.remove({}, (err, albums) => {
-    //       expect(err).to.not.exist;
-    //       cb();
-    //      });
-    //
-    //   });
-    // });
+        var newPalbum = new Palbum({
+            imagename: 'Nature 2',
+            imageurl: 'http://www.planwallpaper.com/static/images/038a514bc31420cbff45bac3303672a9_large.jpg'
+          });
+
+          Palbum.create(newPalbum, function(err, palbum) {
+            expect(palbum).to.exist;
+            cb();
+           });
+      });
+    });
+
+    describe('.get()', function() {
+    it('should retrieve the Palbum from the model.', function(cb) {
+
+       Palbum.find({}, (err, albums) => {
+          // expect(albums).to.exist;
+          expect(albums).to.have.length(1);
+          cb();
+         });
+
+      });
+    });
+
+    describe('.delete()', function() {
+    it('should delete the Palbum from the model.', function(cb) {
+
+       Palbum.remove({}, (err, albums) => {
+          expect(err).to.not.exist;
+          cb();
+         });
+
+      });
+    });
 
 
     // Errorrrrrrrrrrrrrrrrr
