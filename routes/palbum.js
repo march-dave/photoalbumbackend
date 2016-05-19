@@ -11,7 +11,7 @@ router.route('/')
           } else {
             res.send(bids);
           }
-        });
+        }); 
     })
     .post((req, res) => {
       var palbum = new Palbum(req.body);
